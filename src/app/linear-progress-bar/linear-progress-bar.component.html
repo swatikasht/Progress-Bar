@@ -1,0 +1,56 @@
+
+<div class="container">
+	<div class="margin10">
+	    <div>
+	        <label > Color : </label>
+	        <span>
+	       	 	Primary	<input [(ngModel)] = "color" type="radio" name="color" value="primary"> 
+	    	</span>
+	    	<span>
+	       	 	Accent	<input [(ngModel)] = "color" type="radio" name="color" value="accent">
+	    	</span>
+	    	<span>
+	       	 	Warn	<input [(ngModel)] = "color" type="radio" name="color" value="warn">
+	    	</span>
+		</div>
+		<div>
+	        <label > Mode : </label>
+	        <span>
+	       	 	Determinate	<input [(ngModel)] = "mode" type="radio" name="mode" value="determinate"> 
+	    	</span>
+	    	<span>
+	       	 	Indeterminate	<input [(ngModel)] = "mode" type="radio" name="mode" value="indeterminate">
+	    	</span>
+	    	<span>
+	       	 	Buffer	<input [(ngModel)] = "mode" type="radio" name="mode" value="buffer">
+	    	</span>
+	    	<span>
+	       	 	Query	<input [(ngModel)] = "mode" type="radio" name="mode" value="query">
+	    	</span>
+		</div>
+    </div>
+
+
+    <div class="marginTopBottom20">
+    	Using Angular Material:
+		<mat-progress-bar class="height40" [mode]="mode" [value]="value" [bufferValue]= "bufferValue" [color]= "color"> </mat-progress-bar>	
+		{{value}} % Complete
+	</div>
+
+	<div class="marginTopBottom20">
+		Customized Progress Bar:
+		<app-show-progress-bar class="height40" [mode]="mode" [value]="value" [bufferValue]= "bufferValue" [color]= "color"></app-show-progress-bar>
+	</div>
+
+	<div class= "marginTopBottom20">
+		Using bootstrap component:
+		<div class="progress" class="height40">
+  			<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': value + '%'}">
+    			{{value}} % Complete
+  			</div>
+		</div>
+	</div>
+
+	
+</div>
+
